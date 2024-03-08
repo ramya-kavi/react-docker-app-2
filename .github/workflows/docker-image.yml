@@ -13,18 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
     - uses: actions/checkout@v3
     - name: Login to Docker Hub
       uses: docker/login-action@v2
       with:
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        
+  
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
 
       with:
         file: ./Dockerfile.prod
         push: true
-        tags: ramyakavi/react-docker-app-2:1.0
+        tags: ramyakavi/react-docker-app-2:$(date +'%s')
 
