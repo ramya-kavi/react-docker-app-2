@@ -24,11 +24,10 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
   
     - name: Build and push Docker image
-      uses: docker/bake-action@v4
-   
 
-      with:
-        files: ./docker-compose-prod.yml
-        push: true
-        tags: ramyakavi/react-docker-app-2:${{ env.NOW }}
+      run: docker-compose -f docker-compose.yml -f docker-compose-prod.yml build
+    - name: Push Docker image
+      run: docker-compose push ramyakavi/react-docker-app-2:${{ env.NOW }}
+
+
 
