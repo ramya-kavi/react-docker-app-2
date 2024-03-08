@@ -27,7 +27,7 @@ jobs:
       uses: docker/build-push-action@v4
 
       with:
-        file: ./Dockerfile.prod
+        file: ./docker-compose-prod.yml
         push: true
         tags: ramyakavi/react-docker-app-2:${{ env.NOW }}
 
