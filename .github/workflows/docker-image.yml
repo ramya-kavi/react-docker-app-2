@@ -28,7 +28,7 @@ jobs:
    
 
       with:
-        compose-file: ./docker-compose-prod.yml
+        file: ./docker-compose-prod.yml
         push: true
         tags: ramyakavi/react-docker-app-2:${{ env.NOW }}
 
