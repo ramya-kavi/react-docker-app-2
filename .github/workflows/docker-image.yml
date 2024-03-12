@@ -27,7 +27,7 @@ jobs:
       uses: isbang/compose-action@v1.5.1
       with:
         compose-file: "./docker-compose-prod.yml"
-        push: true
+        compose-flags: "push"
         tags: ramyakavi/react-docker-app-2:${{ env.NOW }}
 
 
